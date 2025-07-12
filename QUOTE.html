@@ -4,103 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @layer base {
+        h1 {
+          @apply mt-10 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+        }
+        h2 {
+          @apply mt-8 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+        }
+        h3 {
+          @apply mt-6 scroll-m-20 text-2xl font-semibold tracking-tight;
+        }
+        h4 {
+          @apply mt-4 scroll-m-20 text-xl font-semibold tracking-tight;
+        }
+        p {
+          @apply mt-2;
+        }
+        blockquote {
+          @apply mt-2 border-l-2 pl-6 italic;
+        }
+        table {
+          @apply w-full;
+        }
+        tr {
+          @apply m-0 border-t p-0 even:bg-slate-100;
+        }
+        th {
+          @apply border px-2 py-1 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
+        }
+        td {
+          @apply border px-2 py-1 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+        }
+        ul {
+          @apply my-2 ml-6 list-disc [&>li]:mt-0;
+        }
+        ol {
+          @apply my-2 ml-6 list-decimal [&>li]:mt-0;
+        }
+        pre {
+          @apply my-2 rounded bg-slate-100 font-mono;
+        }
+        code {
+          @apply relative rounded px-[0.3rem] py-[0.2rem] font-mono;
+        }
+        p code {
+          @apply bg-slate-100 text-xs;
+        }
+        a {
+          @apply underline underline-offset-4;
+        }          
+      }
+    </style>
     <title></title>
-    <style>*,
-::after,
-::before {
-  box-sizing: border-box;
-}
-html {
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji";
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
-  tab-size: 4;
-}
-body {
-  margin: 0;
-}
-b,
-strong {
-  font-weight: bolder;
-}
-code,
-kbd,
-pre,
-samp {
-  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
-    monospace;
-  font-size: 1em;
-}
-small {
-  font-size: 80%;
-}
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sub {
-  bottom: -0.25em;
-}
-sup {
-  top: -0.5em;
-}
-table {
-  border-color: currentcolor;
-}
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-}
-[type="button"],
-[type="reset"],
-[type="submit"],
-button {
-  -webkit-appearance: button;
-}
-legend {
-  padding: 0;
-}
-progress {
-  vertical-align: baseline;
-}
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
-  height: auto;
-}
-[type="search"] {
-  -webkit-appearance: textfield;
-  outline-offset: -2px;
-}
-::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  font: inherit;
-}
-summary {
-  display: list-item;
-}</style>
-    <style>.text-red-50 { color: #fef2f2; }
-.p-0 { padding: 0; }
-.p-5 { padding: 1.25rem; }</style>
   </head>
   <body>
     <h1>Quote</h1>
 <p>Quote Date: 2025-04-30<br><strong>Civil Association of the University of Science
 and Humanities</strong></p>
-<div class="grid grid-cols-2 py-8">
-<div class="text-green-400">
+<div class="grid grid-cols-2 py-8 px-8">
+<div >
 <h4>FastSpring</h4>
 <p>8 E. Figueroa Street Suite 240<br>Santa Barbara, CA 93101<br>US<br><a href="mailto:orders@fastspring.com">orders@fastspring.com</a><br>(VAT Number : EU826012240)</p>
 </div>
@@ -116,37 +79,27 @@ and Humanities</strong></p>
 <th>Description</th>
 <th>Unit</th>
 <th>Quantity</th>
-<th>Amount</th>
+<th align="right">Amount</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>StarUML 6 Professional</td>
 <td>$169</td>
 <td>100</td>
-<td>$16,900</td>
+<td align="right">$16,900</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>Total</td>
-<td><strong>$16,900</strong></td>
+<td><strong>Total</strong></td>
+<td align="right"><strong>$16,900</strong></td>
 </tr>
 </tbody></table>
 <h4>Sales Taxes</h4>
 <p>Depending on your billing address, additional sales taxes may apply during checkout.</p>
 <h4>Purchase Orders</h4>
 <p>Please send an approved purchase order to <a href="mailto:support@staruml.io">support@staruml.io</a>.</p>
-<br>
-<br>
-<br>
-<br>
-
+<div class="h-24"></div>
 <p><strong>MKLabs Co., Ltd.</strong><br>#114, Lotte World Wellbeing Center Building, 240 Olympic-ro, Songpa-gu, Seoul, Republic of Korea.</p>
 <p>StarUML licenses are sold by our trusted reseller, FastSpring LLC. They are a U.S. based company. Their
 W9 form is available at: http://<a href="http://www.fastspring.com/w9.pdf">www.fastspring.com/w9.pdf</a></p>

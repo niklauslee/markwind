@@ -4,9 +4,9 @@ Quote Date: 2025-04-30\
 **Civil Association of the University of Science
 and Humanities**
 
-::::div{.grid .grid-cols-2 .py-8}
+::::div{.grid .grid-cols-2 .py-8 .px-8}
 
-:::div{.text-green-400}
+:::div{}
 
 #### FastSpring
 
@@ -30,11 +30,10 @@ support@staruml.io
 
 ::::
 
-| Description            | Unit | Quantity | Amount      |
-| ---------------------- | ---- | -------- | ----------- |
-| StarUML 6 Professional | $169 | 100      | $16,900     |
-|                        |      |          |             |
-|                        |      | Total    | **$16,900** |
+| Description            | Unit | Quantity  |      Amount |
+| ---------------------- | ---- | --------- | ----------: |
+| StarUML 6 Professional | $169 | 100       |     $16,900 |
+|                        |      | **Total** | **$16,900** |
 
 #### Sales Taxes
 
@@ -44,10 +43,7 @@ Depending on your billing address, additional sales taxes may apply during check
 
 Please send an approved purchase order to support@staruml.io.
 
-<br>
-<br>
-<br>
-<br>
+::div{.h-24}
 
 **MKLabs Co., Ltd.**\
 #114, Lotte World Wellbeing Center Building, 240 Olympic-ro, Songpa-gu, Seoul, Republic of Korea.

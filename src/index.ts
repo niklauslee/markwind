@@ -30,13 +30,13 @@ export async function transform(data: string): Promise<string> {
   const html = marked.parse(data);
 
   // get the CSS from the config
-  const css = getCss(config as Config);
+  // const css = getCss(config as Config);
 
   // render the HTML
   const renderedHtml = await Mustache.render(htmlWrapper, {
     content: html,
-    preflight: `<style>${modernNormalizeCss}</style>`,
-    css: `<style>${css}</style>`,
+    // preflight: `<style>${modernNormalizeCss}</style>`,
+    // css: `<style>${css}</style>`,
   });
   return renderedHtml;
 }
