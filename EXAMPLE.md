@@ -1,15 +1,16 @@
-Lorem:br
-ipsum.
+# Title 1
+
+## Lorem ipsum.
 
 ::hr{.red}
 
 A :i[lovely] language know as :abbr[HTML]{title="HyperText Markup Language"}.
 
-::::container
+::::div
 
-:::div{.red}
+:::div{.red .p-5}
 
-inner paragraph 1
+inner `paragraph` 1
 
 :::
 

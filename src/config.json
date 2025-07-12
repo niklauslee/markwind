@@ -1,0 +1,7 @@
+{
+  "css": {
+    "text-red-50": "color: #fef2f2;",
+    "p-0": "padding: 0;",
+    "p-5": "padding: 1.25rem;"
+  }
+}

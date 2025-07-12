@@ -3,27 +3,40 @@ import { createDirectives, presetDirectiveConfigs } from "marked-directive";
 import { access, constants, readFile } from "node:fs/promises";
 import Mustache from "mustache";
 import path from "node:path";
+import { modernNormalizeCss, htmlWrapper } from "./strings";
+import config from "./config.json";
 
-async function loadTemplate(templateName: string): Promise<string> {
-  let filePath = path.join(__dirname, `../res/templates/${templateName}.html`);
-  let template;
+type Config = {
+  css: Record<string, string>;
+};
 
-  // check if template file is built-in or custom
-  try {
-    await access(filePath, constants.F_OK);
-  } catch (err) {
-    filePath = templateName;
-  }
-
-  // read the template file
-  try {
-    template = await readFile(filePath, "utf8");
-  } catch (err) {
-    throw new Error(`Template file not found: ${filePath}`);
-  }
-
-  return template;
+function getCss(config: Config) {
+  // convert config CSS object to a string
+  return Object.entries(config.css)
+    .map(([key, value]) => `.${key} { ${value} }`)
+    .join("\n");
 }
+
+// async function loadTemplate(templateName: string): Promise<string> {
+//   let filePath = path.join(__dirname, `../res/templates/${templateName}.html`);
+//   let template;
+
+//   // check if template file is built-in or custom
+//   try {
+//     await access(filePath, constants.F_OK);
+//   } catch (err) {
+//     filePath = templateName;
+//   }
+
+//   // read the template file
+//   try {
+//     template = await readFile(filePath, "utf8");
+//   } catch (err) {
+//     throw new Error(`Template file not found: ${filePath}`);
+//   }
+
+//   return template;
+// }
 
 async function loadTheme(themeName: string): Promise<string> {
   let filePath = path.join(__dirname, `../res/themes/${themeName}.css`);
@@ -64,14 +77,18 @@ export async function transform(
   // parse and render the markdown data
   const html = marked.parse(data);
 
+  // get the CSS from the config
+  const css = getCss(config as Config);
+
   // load template and theme
-  const templateHtml = await loadTemplate(template);
-  const themeCss = await loadTheme(theme);
+  // const templateHtml = await loadTemplate(template);
+  // const themeCss = await loadTheme(theme);
 
   // render the HTML
-  const renderedHtml = await Mustache.render(templateHtml, {
+  const renderedHtml = await Mustache.render(htmlWrapper, {
     content: html,
-    theme: `<style>${themeCss}</style>`,
+    preflight: `<style>${modernNormalizeCss}</style>`,
+    css: `<style>${css}</style>`,
   });
   return renderedHtml;
 }
