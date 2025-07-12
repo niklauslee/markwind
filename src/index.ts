@@ -1,60 +1,77 @@
-/**
- * Core library functionality
- */
-export class Markwind {
-  private name: string;
+import { Marked } from "marked";
+import { createDirectives, presetDirectiveConfigs } from "marked-directive";
+import { access, constants, readFile } from "node:fs/promises";
+import Mustache from "mustache";
+import path from "node:path";
 
-  constructor(name: string = "Markwind") {
-    this.name = name;
+async function loadTemplate(templateName: string): Promise<string> {
+  let filePath = path.join(__dirname, `../res/templates/${templateName}.html`);
+  let template;
+
+  // check if template file is built-in or custom
+  try {
+    await access(filePath, constants.F_OK);
+  } catch (err) {
+    filePath = templateName;
   }
 
-  /**
-   * Get the name
-   */
-  public getName(): string {
-    return this.name;
+  // read the template file
+  try {
+    template = await readFile(filePath, "utf8");
+  } catch (err) {
+    throw new Error(`Template file not found: ${filePath}`);
   }
 
-  /**
-   * Set the name
-   */
-  public setName(name: string): void {
-    this.name = name;
-  }
-
-  /**
-   * Process text (example function)
-   */
-  public processText(text: string): string {
-    return `[${this.name}] Processing: ${text}`;
-  }
-
-  /**
-   * Transform data (example function)
-   */
-  public transform(data: unknown): string {
-    return JSON.stringify(data, null, 2);
-  }
+  return template;
 }
 
-/**
- * Utility functions
- */
-export const utils = {
-  /**
-   * Check if a string is empty
-   */
-  isEmpty: (str: string): boolean => {
-    return !str || str.trim().length === 0;
-  },
+async function loadTheme(themeName: string): Promise<string> {
+  let filePath = path.join(__dirname, `../res/themes/${themeName}.css`);
+  let theme;
 
-  /**
-   * Capitalize first letter
-   */
-  capitalize: (str: string): string => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  },
-};
+  // check if theme file is built-in or custom
+  try {
+    await access(filePath, constants.F_OK);
+  } catch (err) {
+    filePath = themeName;
+  }
 
-// Export default instance
-export default new Markwind();
+  // read the theme file
+  try {
+    theme = await readFile(filePath, "utf8");
+  } catch (err) {
+    throw new Error(`Theme file not found: ${filePath}`);
+  }
+
+  return theme;
+}
+
+export async function transform(
+  data: string,
+  template: string = "default",
+  theme: string = "default"
+): Promise<string> {
+  // prepare marked with directives
+  const marked = new Marked().use(
+    createDirectives([
+      ...presetDirectiveConfigs,
+      // custom directives
+      { level: "container", marker: ":::::" },
+      { level: "container", marker: "::::" },
+    ])
+  );
+
+  // parse and render the markdown data
+  const html = marked.parse(data);
+
+  // load template and theme
+  const templateHtml = await loadTemplate(template);
+  const themeCss = await loadTheme(theme);
+
+  // render the HTML
+  const renderedHtml = await Mustache.render(templateHtml, {
+    content: html,
+    theme: `<style>${themeCss}</style>`,
+  });
+  return renderedHtml;
+}

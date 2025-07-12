@@ -28,11 +28,13 @@
   "license": "MIT",
   "files": [
     "dist/**/*",
+    "res/**/*",
     "README.md",
     "LICENSE"
   ],
   "devDependencies": {
     "@types/jest": "^29.5.0",
+    "@types/mustache": "^4.2.6",
     "@types/node": "^20.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
@@ -44,6 +46,9 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "commander": "^11.0.0"
+    "commander": "^11.0.0",
+    "marked": "^16.0.0",
+    "marked-directive": "^1.0.7",
+    "mustache": "^4.2.0"
   }
 }
