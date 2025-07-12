@@ -14,27 +14,17 @@ program
   .description("A CLI tool to generate style-rich HTML doc from markdown.")
   .argument("<file>", "input markdown file (.md) to transform")
   .option("-o, --output <output>", "specify output file")
-  .option("-t, --template <template>", "specify template file", "default")
-  .option("-h, --theme <theme>", "specify theme file", "default")
-  .action(
-    async (
-      file: string,
-      options: { output: string; template: string; theme: string }
-    ) => {
-      try {
-        const data = readFileSync(file, "utf8");
-        const html = await transform(data, options.template, options.theme);
-        console.log(`Transforming file: ${file}`, html);
-
-        // save output to options.output if specified
-        const defaultOutput = `${path.parse(file).name}.html`;
-        const output = options.output || defaultOutput;
-        writeFileSync(output, html);
-        console.log(`Output saved to: ${output}`);
-      } catch (error) {
-        console.error("Error during transformation:", error);
-      }
+  .action(async (file: string, options: { output: string }) => {
+    try {
+      const data = readFileSync(file, "utf8");
+      const html = await transform(data);
+      const defaultOutput = `${path.parse(file).name}.html`;
+      const output = options.output || defaultOutput;
+      writeFileSync(output, html);
+      console.log(`output: ${output}`);
+    } catch (error) {
+      console.error("Error during transformation:", error);
     }
-  );
+  });
 
 program.parse();
