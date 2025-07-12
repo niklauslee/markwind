@@ -4,9 +4,9 @@ Quote Date: 2025-04-30\
 **Civil Association of the University of Science
 and Humanities**
 
-::::div
+::::div{.grid .grid-cols-2 .py-8}
 
-:::div{.p-5 .red}
+:::div{.text-green-400}
 
 #### FastSpring
 
@@ -18,7 +18,7 @@ orders@fastspring.com\
 
 :::
 
-:::div{.p-5}
+:::div{}
 
 #### Product Support
 
