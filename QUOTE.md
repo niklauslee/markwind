@@ -4,7 +4,7 @@ Quote Date: 2025-04-30\
 **Civil Association of the University of Science
 and Humanities**
 
-::::div{.grid .grid-cols-2 .py-8 .px-8}
+::::div{.grid .grid-cols-2 .py-4 .px-4}
 
 :::div{}
 
@@ -37,13 +37,17 @@ support@staruml.io
 
 #### Sales Taxes
 
-Depending on your billing address, additional sales taxes may apply during checkout.
+Depending on your `billing address`, additional **sales taxes** may apply during checkout.
+
+This is :[inline content text `mono`]{.font-semibold}
 
 #### Purchase Orders
 
 Please send an approved purchase order to support@staruml.io.
 
-::div{.h-24}
+```js
+const x = 100;
+```
 
 **MKLabs Co., Ltd.**\
 #114, Lotte World Wellbeing Center Building, 240 Olympic-ro, Songpa-gu, Seoul, Republic of Korea.

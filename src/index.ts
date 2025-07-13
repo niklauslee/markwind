@@ -1,11 +1,11 @@
 import Mustache from "mustache";
-import { generateUnoCSS } from "./unocss";
+import { generateCSS } from "./css";
 import { htmlWrapper } from "./strings";
 import { parse } from "./parser";
 
 export async function transform(data: string): Promise<string> {
-  const html = parse(data);
-  const css = await generateUnoCSS(html);
+  const html = parse(data, "article", "prose prose-truegray font-sans mx-auto");
+  const css = await generateCSS(html);
 
   // render the HTML
   const renderedHtml = await Mustache.render(htmlWrapper, {

@@ -1,6 +1,6 @@
 # markwind
 
-A TypeScript library to generate style-rich HTML doc from markdown.
+A tool for style-rich markdown with TailwindCSS and directives.
 
 ## Use cases
 

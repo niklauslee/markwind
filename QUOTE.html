@@ -4,208 +4,151 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <style>
-      /* layer: preflights */
-      *,
-      ::before,
-      ::after {
-        --un-rotate: 0;
-        --un-rotate-x: 0;
-        --un-rotate-y: 0;
-        --un-rotate-z: 0;
-        --un-scale-x: 1;
-        --un-scale-y: 1;
-        --un-scale-z: 1;
-        --un-skew-x: 0;
-        --un-skew-y: 0;
-        --un-translate-x: 0;
-        --un-translate-y: 0;
-        --un-translate-z: 0;
-        --un-pan-x: ;
-        --un-pan-y: ;
-        --un-pinch-zoom: ;
-        --un-scroll-snap-strictness: proximity;
-        --un-ordinal: ;
-        --un-slashed-zero: ;
-        --un-numeric-figure: ;
-        --un-numeric-spacing: ;
-        --un-numeric-fraction: ;
-        --un-border-spacing-x: 0;
-        --un-border-spacing-y: 0;
-        --un-ring-offset-shadow: 0 0 rgb(0 0 0 / 0);
-        --un-ring-shadow: 0 0 rgb(0 0 0 / 0);
-        --un-shadow-inset: ;
-        --un-shadow: 0 0 rgb(0 0 0 / 0);
-        --un-ring-inset: ;
-        --un-ring-offset-width: 0px;
-        --un-ring-offset-color: #fff;
-        --un-ring-width: 0px;
-        --un-ring-color: rgb(147 197 253 / 0.5);
-        --un-blur: ;
-        --un-brightness: ;
-        --un-contrast: ;
-        --un-drop-shadow: ;
-        --un-grayscale: ;
-        --un-hue-rotate: ;
-        --un-invert: ;
-        --un-saturate: ;
-        --un-sepia: ;
-        --un-backdrop-blur: ;
-        --un-backdrop-brightness: ;
-        --un-backdrop-contrast: ;
-        --un-backdrop-grayscale: ;
-        --un-backdrop-hue-rotate: ;
-        --un-backdrop-invert: ;
-        --un-backdrop-opacity: ;
-        --un-backdrop-saturate: ;
-        --un-backdrop-sepia: ;
-      }
-      ::backdrop {
-        --un-rotate: 0;
-        --un-rotate-x: 0;
-        --un-rotate-y: 0;
-        --un-rotate-z: 0;
-        --un-scale-x: 1;
-        --un-scale-y: 1;
-        --un-scale-z: 1;
-        --un-skew-x: 0;
-        --un-skew-y: 0;
-        --un-translate-x: 0;
-        --un-translate-y: 0;
-        --un-translate-z: 0;
-        --un-pan-x: ;
-        --un-pan-y: ;
-        --un-pinch-zoom: ;
-        --un-scroll-snap-strictness: proximity;
-        --un-ordinal: ;
-        --un-slashed-zero: ;
-        --un-numeric-figure: ;
-        --un-numeric-spacing: ;
-        --un-numeric-fraction: ;
-        --un-border-spacing-x: 0;
-        --un-border-spacing-y: 0;
-        --un-ring-offset-shadow: 0 0 rgb(0 0 0 / 0);
-        --un-ring-shadow: 0 0 rgb(0 0 0 / 0);
-        --un-shadow-inset: ;
-        --un-shadow: 0 0 rgb(0 0 0 / 0);
-        --un-ring-inset: ;
-        --un-ring-offset-width: 0px;
-        --un-ring-offset-color: #fff;
-        --un-ring-width: 0px;
-        --un-ring-color: rgb(147 197 253 / 0.5);
-        --un-blur: ;
-        --un-brightness: ;
-        --un-contrast: ;
-        --un-drop-shadow: ;
-        --un-grayscale: ;
-        --un-hue-rotate: ;
-        --un-invert: ;
-        --un-saturate: ;
-        --un-sepia: ;
-        --un-backdrop-blur: ;
-        --un-backdrop-brightness: ;
-        --un-backdrop-contrast: ;
-        --un-backdrop-grayscale: ;
-        --un-backdrop-hue-rotate: ;
-        --un-backdrop-invert: ;
-        --un-backdrop-opacity: ;
-        --un-backdrop-saturate: ;
-        --un-backdrop-sepia: ;
-      }
-      /* layer: default */
-      .grid {
-        display: grid;
-      }
-      .grid-cols-2 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .h-24 {
-        height: 6rem;
-      }
-      .px-8 {
-        padding-left: 2rem;
-        padding-right: 2rem;
-      }
-      .py-8 {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-      }
-    </style>
+    <style>/* layer: fonts */
+/* cyrillic */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/geist/v3/gyBhhwUxId8gMGYQMKR3pzfaWI_RnOMInpna6VEdtaiLqoA.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/geist/v3/gyBhhwUxId8gMGYQMKR3pzfaWI_RnOMIlJna6VEdtaiLqoA.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/geist/v3/gyBhhwUxId8gMGYQMKR3pzfaWI_RnOMImpna6VEdtaiL.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxTN1OVk6OThhvAWV8.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxTPlOVk6OThhvAWV8.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxTOVOVk6OThhvAWV8.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxTNVOVk6OThhvAWV8.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxTNFOVk6OThhvAWV8.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxTOlOVk6OThhvA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* layer: preflights */
+*,::before,::after{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgb(0 0 0 / 0);--un-ring-shadow:0 0 rgb(0 0 0 / 0);--un-shadow-inset: ;--un-shadow:0 0 rgb(0 0 0 / 0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgb(147 197 253 / 0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: ;}::backdrop{--un-rotate:0;--un-rotate-x:0;--un-rotate-y:0;--un-rotate-z:0;--un-scale-x:1;--un-scale-y:1;--un-scale-z:1;--un-skew-x:0;--un-skew-y:0;--un-translate-x:0;--un-translate-y:0;--un-translate-z:0;--un-pan-x: ;--un-pan-y: ;--un-pinch-zoom: ;--un-scroll-snap-strictness:proximity;--un-ordinal: ;--un-slashed-zero: ;--un-numeric-figure: ;--un-numeric-spacing: ;--un-numeric-fraction: ;--un-border-spacing-x:0;--un-border-spacing-y:0;--un-ring-offset-shadow:0 0 rgb(0 0 0 / 0);--un-ring-shadow:0 0 rgb(0 0 0 / 0);--un-shadow-inset: ;--un-shadow:0 0 rgb(0 0 0 / 0);--un-ring-inset: ;--un-ring-offset-width:0px;--un-ring-offset-color:#fff;--un-ring-width:0px;--un-ring-color:rgb(147 197 253 / 0.5);--un-blur: ;--un-brightness: ;--un-contrast: ;--un-drop-shadow: ;--un-grayscale: ;--un-hue-rotate: ;--un-invert: ;--un-saturate: ;--un-sepia: ;--un-backdrop-blur: ;--un-backdrop-brightness: ;--un-backdrop-contrast: ;--un-backdrop-grayscale: ;--un-backdrop-hue-rotate: ;--un-backdrop-invert: ;--un-backdrop-opacity: ;--un-backdrop-saturate: ;--un-backdrop-sepia: ;}
+/* layer: typography */
+.prose :where(h1,h2,h3,h4,h5,h6):not(:where(.not-prose,.not-prose *)){color:var(--un-prose-headings);font-weight:600;line-height:1.25;}.prose :where(a):not(:where(.not-prose,.not-prose *)){color:var(--un-prose-links);text-decoration:underline;font-weight:500;}.prose :where(a code):not(:where(.not-prose,.not-prose *)){color:var(--un-prose-links);}.prose :where(p,ul,ol,pre):not(:where(.not-prose,.not-prose *)){margin:1em 0;line-height:1.75;}.prose :where(blockquote):not(:where(.not-prose,.not-prose *)){margin:1em 0;padding-left:1em;font-style:italic;border-left:.25em solid var(--un-prose-borders);}.prose :where(h1):not(:where(.not-prose,.not-prose *)){margin:1rem 0;font-size:2.25em;}.prose :where(h2):not(:where(.not-prose,.not-prose *)){margin:1.75em 0 .5em;font-size:1.75em;}.prose :where(h3):not(:where(.not-prose,.not-prose *)){margin:1.5em 0 .5em;font-size:1.375em;}.prose :where(h4):not(:where(.not-prose,.not-prose *)){margin:1em 0;font-size:1.125em;}.prose :where(img,video):not(:where(.not-prose,.not-prose *)){max-width:100%;}.prose :where(figure,picture):not(:where(.not-prose,.not-prose *)){margin:1em 0;}.prose :where(figcaption):not(:where(.not-prose,.not-prose *)){color:var(--un-prose-captions);font-size:.875em;}.prose :where(code):not(:where(.not-prose,.not-prose *)){color:var(--un-prose-code);font-size:.875em;font-weight:600;font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;}.prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::before,.prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::after{content:"`";}.prose :where(pre):not(:where(.not-prose,.not-prose *)){padding:1.25rem 1.5rem;overflow-x:auto;border-radius:.375rem;}.prose :where(pre,code):not(:where(.not-prose,.not-prose *)){white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;hyphens:none;background:transparent;}.prose :where(pre code):not(:where(.not-prose,.not-prose *)){font-weight:inherit;}.prose :where(ol,ul):not(:where(.not-prose,.not-prose *)){padding-left:1.25em;}.prose :where(ol):not(:where(.not-prose,.not-prose *)){list-style-type:decimal;}.prose :where(ol[type="A"]):not(:where(.not-prose,.not-prose *)){list-style-type:upper-alpha;}.prose :where(ol[type="a"]):not(:where(.not-prose,.not-prose *)){list-style-type:lower-alpha;}.prose :where(ol[type="A" s]):not(:where(.not-prose,.not-prose *)){list-style-type:upper-alpha;}.prose :where(ol[type="a" s]):not(:where(.not-prose,.not-prose *)){list-style-type:lower-alpha;}.prose :where(ol[type="I"]):not(:where(.not-prose,.not-prose *)){list-style-type:upper-roman;}.prose :where(ol[type="i"]):not(:where(.not-prose,.not-prose *)){list-style-type:lower-roman;}.prose :where(ol[type="I" s]):not(:where(.not-prose,.not-prose *)){list-style-type:upper-roman;}.prose :where(ol[type="i" s]):not(:where(.not-prose,.not-prose *)){list-style-type:lower-roman;}.prose :where(ol[type="1"]):not(:where(.not-prose,.not-prose *)){list-style-type:decimal;}.prose :where(ul):not(:where(.not-prose,.not-prose *)){list-style-type:disc;}.prose :where(ol > li):not(:where(.not-prose,.not-prose *))::marker,.prose :where(ul > li):not(:where(.not-prose,.not-prose *))::marker,.prose :where(summary):not(:where(.not-prose,.not-prose *))::marker{color:var(--un-prose-lists);}.prose :where(hr):not(:where(.not-prose,.not-prose *)){margin:2em 0;border:1px solid var(--un-prose-hr);}.prose :where(table):not(:where(.not-prose,.not-prose *)){display:block;margin:1em 0;border-collapse:collapse;overflow-x:auto;}.prose :where(tr):not(:where(.not-prose,.not-prose *)):nth-child(2n){background:var(--un-prose-bg-soft);}.prose :where(td,th):not(:where(.not-prose,.not-prose *)){border:1px solid var(--un-prose-borders);padding:.625em 1em;}.prose :where(abbr):not(:where(.not-prose,.not-prose *)){cursor:help;}.prose :where(kbd):not(:where(.not-prose,.not-prose *)){color:var(--un-prose-code);border:1px solid;padding:.25rem .5rem;font-size:.875em;border-radius:.25rem;}.prose :where(details):not(:where(.not-prose,.not-prose *)){margin:1em 0;padding:1.25rem 1.5rem;background:var(--un-prose-bg-soft);}.prose :where(summary):not(:where(.not-prose,.not-prose *)){cursor:pointer;font-weight:600;}
+.prose{color:var(--un-prose-body);max-width:65ch;}
+.prose-truegray{--un-prose-body:#404040;--un-prose-headings:#171717;--un-prose-links:#171717;--un-prose-lists:#a3a3a3;--un-prose-hr:#e5e5e5;--un-prose-captions:#737373;--un-prose-code:#171717;--un-prose-borders:#e5e5e5;--un-prose-bg-soft:#f5f5f5;--un-prose-invert-body:#e5e5e5;--un-prose-invert-headings:#f5f5f5;--un-prose-invert-links:#f5f5f5;--un-prose-invert-lists:#737373;--un-prose-invert-hr:#404040;--un-prose-invert-captions:#a3a3a3;--un-prose-invert-code:#f5f5f5;--un-prose-invert-borders:#404040;--un-prose-invert-bg-soft:#262626;}
+/* layer: default */
+.grid{display:grid;}
+.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr));}
+.mx-auto{margin-left:auto;margin-right:auto;}
+.px-4{padding-left:1rem;padding-right:1rem;}
+.py-4{padding-top:1rem;padding-bottom:1rem;}
+.font-semibold{font-weight:600;}
+.font-sans{font-family:"Geist",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";}</style>
   </head>
   <body>
-    <article class="prose">
-      <h1>Quote</h1>
-      <p>
-        Quote Date: 2025-04-30<br /><strong
-          >Civil Association of the University of Science and Humanities</strong
-        >
-      </p>
-      <div class="grid grid-cols-2 py-8 px-8">
-        <div>
-          <h4>FastSpring</h4>
-          <p>
-            8 E. Figueroa Street Suite 240<br />Santa Barbara, CA 93101<br />US<br /><a
-              href="mailto:orders@fastspring.com"
-              >orders@fastspring.com</a
-            ><br />(VAT Number : EU826012240)
-          </p>
-        </div>
-        <div>
-          <h4>Product Support</h4>
-          <p>
-            MKLabs Co., Ltd.<br /><a href="http://staruml.io%5C"
-              >http://staruml.io\</a
-            >
-            <a href="mailto:support@staruml.io">support@staruml.io</a>
-          </p>
-        </div>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Description</th>
-            <th>Unit</th>
-            <th>Quantity</th>
-            <th align="right">Amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>StarUML 6 Professional</td>
-            <td>$169</td>
-            <td>100</td>
-            <td align="right">$16,900</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td><strong>Total</strong></td>
-            <td align="right"><strong>$16,900</strong></td>
-          </tr>
-        </tbody>
-      </table>
-      <h4>Sales Taxes</h4>
-      <p>
-        Depending on your billing address, additional sales taxes may apply
-        during checkout.
-      </p>
-      <h4>Purchase Orders</h4>
-      <p>
-        Please send an approved purchase order to
-        <a href="mailto:support@staruml.io">support@staruml.io</a>.
-      </p>
-      <div class="h-24"></div>
-      <p>
-        <strong>MKLabs Co., Ltd.</strong><br />#114, Lotte World Wellbeing
-        Center Building, 240 Olympic-ro, Songpa-gu, Seoul, Republic of Korea.
-      </p>
-      <p>
-        StarUML licenses are sold by our trusted reseller, FastSpring LLC. They
-        are a U.S. based company. Their W9 form is available at: http://<a
-          href="http://www.fastspring.com/w9.pdf"
-          >www.fastspring.com/w9.pdf</a
-        >
-      </p>
-    </article>
+    <article class="prose prose-truegray font-sans mx-auto"><h1>Quote</h1>
+<p>Quote Date: 2025-04-30<br><strong>Civil Association of the University of Science
+and Humanities</strong></p>
+<div class="grid grid-cols-2 py-4 px-4">
+<div >
+<h4>FastSpring</h4>
+<p>8 E. Figueroa Street Suite 240<br>Santa Barbara, CA 93101<br>US<br><a href="mailto:orders@fastspring.com">orders@fastspring.com</a><br>(VAT Number : EU826012240)</p>
+</div>
+<div >
+<h4>Product Support</h4>
+<p>MKLabs Co., Ltd.<br><a href="http://staruml.io%5C">http://staruml.io\</a>
+<a href="mailto:support@staruml.io">support@staruml.io</a></p>
+</div>
+</div>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Unit</th>
+<th>Quantity</th>
+<th align="right">Amount</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>StarUML 6 Professional</td>
+<td>$169</td>
+<td>100</td>
+<td align="right">$16,900</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>Total</strong></td>
+<td align="right"><strong>$16,900</strong></td>
+</tr>
+</tbody></table>
+<h4>Sales Taxes</h4>
+<p>Depending on your <code>billing address</code>, additional <strong>sales taxes</strong> may apply during checkout.</p>
+<p>This is <span class="font-semibold">inline content text <code>mono</code></span></p>
+<h4>Purchase Orders</h4>
+<p>Please send an approved purchase order to <a href="mailto:support@staruml.io">support@staruml.io</a>.</p>
+<pre><code class="language-js">const x = 100;
+</code></pre>
+<p><strong>MKLabs Co., Ltd.</strong><br>#114, Lotte World Wellbeing Center Building, 240 Olympic-ro, Songpa-gu, Seoul, Republic of Korea.</p>
+<p>StarUML licenses are sold by our trusted reseller, FastSpring LLC. They are a U.S. based company. Their
+W9 form is available at: http://<a href="http://www.fastspring.com/w9.pdf">www.fastspring.com/w9.pdf</a></p>
+</article>
   </body>
 </html>

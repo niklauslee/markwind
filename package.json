@@ -48,6 +48,7 @@
   "dependencies": {
     "@unocss/core": "^66.3.3",
     "@unocss/preset-typography": "^66.3.3",
+    "@unocss/preset-web-fonts": "^66.3.3",
     "@unocss/preset-wind3": "^66.3.3",
     "commander": "^11.0.0",
     "marked": "^16.0.0",

@@ -7,8 +7,6 @@ export const htmlWrapper = `<!DOCTYPE html>
     {{{css}}}
   </head>
   <body>
-    <article class="prose">
     {{{content}}}
-    </article>
   </body>
 </html>`;

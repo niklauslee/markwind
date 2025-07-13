@@ -1,7 +1,11 @@
 import { Marked } from "marked";
 import { createDirectives, presetDirectiveConfigs } from "marked-directive";
 
-export function parse(content: string): string {
+export function parse(
+  content: string,
+  wrapperTag: string = "article",
+  wrapperClass: string = "prose "
+): string {
   const marked = new Marked().use(
     createDirectives([
       ...presetDirectiveConfigs,
@@ -11,5 +15,5 @@ export function parse(content: string): string {
     ])
   );
   const html = marked.parse(content);
-  return html as string;
+  return `<${wrapperTag} class="${wrapperClass}">${html}</${wrapperTag}>`;
 }
