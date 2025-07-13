@@ -11,8 +11,9 @@ export async function generateCSS(htmlContent: string): Promise<string> {
       presetWebFonts({
         provider: "google", // default provider
         fonts: {
-          sans: "Geist",
+          sans: "Inter",
           mono: "JetBrains Mono",
+          serif: "Newsreader",
         },
       }),
     ],

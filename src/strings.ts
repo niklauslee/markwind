@@ -4,9 +4,8 @@ export const htmlWrapper = `<!DOCTYPE html>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{title}}</title>
+    {{{customCss}}}
     {{{css}}}
   </head>
-  <body>
-    {{{content}}}
-  </body>
+  {{{content}}}
 </html>`;

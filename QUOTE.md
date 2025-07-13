@@ -1,3 +1,10 @@
+---
+title: Quote Doc
+wrapperClass: font-sans max-w-2xl mx-auto
+css:
+  .prose table: "display: table; width: 100%"
+---
+
 # Quote
 
 Quote Date: 2025-04-30\
@@ -18,7 +25,7 @@ orders@fastspring.com\
 
 :::
 
-:::div{}
+:::div
 
 #### Product Support
 
@@ -33,7 +40,8 @@ support@staruml.io
 | Description            | Unit | Quantity  |      Amount |
 | ---------------------- | ---- | --------- | ----------: |
 | StarUML 6 Professional | $169 | 100       |     $16,900 |
-|                        |      | **Total** | **$16,900** |
+| Reseller margin (-10%) |      |           |     -$16,90 |
+|                        |      | **Total** | **$15,210** |
 
 #### Sales Taxes
 
